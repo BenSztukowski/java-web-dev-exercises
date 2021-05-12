@@ -1,11 +1,13 @@
 package org.launchcode.java.demos.lsn7interfaces;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Case {
     private ArrayList<Flavor> flavors = new ArrayList<>();
     private ArrayList<Cone> cones = new ArrayList<>();
+    private ArrayList<Topping> toppings = new ArrayList<>();
 
     public Case(){
         Cone cone1 = new Cone("Waffle", 1.25, new ArrayList<>(Arrays.asList( "gluten")));
@@ -27,7 +29,15 @@ public class Case {
         flavors.add(flavor3);
         flavors.add(flavor4);
         flavors.add(flavor5);
+
+        Topping topping1 = new Topping("Sprinkles", .5, new ArrayList<>(Arrays.asList("none")));
+        Topping topping2 = new Topping("nuts", .75, new ArrayList<>(Arrays.asList("nuts")));
+        toppings.add(topping1);
+        toppings.add(topping2);
+
     }
+
+    public ArrayList<Topping> getToppings() {return toppings; }
 
     public ArrayList<Flavor> getFlavors() {
         return flavors;
